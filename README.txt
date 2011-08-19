@@ -1,5 +1,7 @@
 Facebook Service
 
+Based in Facebook Graph API PHP-SDK v3.1.1 https://github.com/facebook/php-sdk/tree/v3.1.1
+
 This allows users to post in the facebook wall through supported plugins.
 
 To enable:
