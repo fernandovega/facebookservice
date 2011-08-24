@@ -17,7 +17,8 @@ $espanol = array(
         
         //User config
 	'facebookservice:usersettings:description' => "<b>Sincroniza tu cuenta de {$CONFIG->site->name} con Facebook.</b>",
-	'facebookservice:usersettings:request' => "Lo primero que debes haces es <a href=\"%s\">Autorizar</a> {$CONFIG->site->name} el acceso a tu cuenta de Facebook.",
+	'facebookservice:usersettings:request' => "Lo primero que debes haces es autorizar a {$CONFIG->site->name} el acceso a tu cuenta de Facebook:<br/><br/>
+                                               <a href=\"%s\">Autorizar acceso</a>",
 	'facebookservice:authorize:error' => 'Deshabilitar autorización a  Facebook.',
 	'facebookservice:authorize:success' => 'Tu acceso a Facebook ha sido autorizado.',
 
