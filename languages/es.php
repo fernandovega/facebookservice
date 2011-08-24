@@ -28,6 +28,12 @@ $espanol = array(
         'facebookservice:revoke:success' => 'El acceso a Facebook ha sido revocado',
 
 	'facebookservice:usersettings:allowed_plugins' => 'Herramientas soportadas',
+        
+        // twitter
+        'thewire:twitterservice:desc' => 'Crea un tweet al publicar en el microblogging',
+                
+       // facebook
+        'thewire:facebookservice:desc' => 'Crea un entrada en el muro de tu facebook al publicar en el microblogging',
 );
 
 add_translation('es', $espanol);

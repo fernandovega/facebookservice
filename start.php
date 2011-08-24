@@ -22,10 +22,7 @@ function facebookservice_init() {
     if (!class_exists('Facebook')) {
             require_once "{$CONFIG->pluginspath}facebookservice/sdk/facebook.php";
     }
-    
-    // extend site views    
-    elgg_extend_view('css', 'facebookservice/css');
-    
+       
     // register page handler
     register_page_handler('facebookservice', 'facebookservice_pagehandler');
 
@@ -79,19 +76,38 @@ function facebookservice_fb_status($hook, $entity_type, $returnvalue, $params) {
                     'appId' => $api_id,
                     'secret' => $api_secret
                       ));
+               
+        $fb_name_post = get_plugin_setting('fb_name_post', 'facebookservice');
+	    $fb_link_post = get_plugin_setting('fb_link_post', 'facebookservice');
+        $fb_description_post = get_plugin_setting('fb_description_post', 'facebookservice');
+        $fb_image_post = get_plugin_setting('fb_image_post', 'facebookservice');
+        
+        $fb_post = array();
+        
+        //message to post
+        $fb_post['access_token'] = $facebook_token;//important if offline_access can publish into facebook
 
+        $fb_post['message'] = $params['message'];
+        
+        //information extra to post with mesagge
+        if($fb_link_post!='')
+           $fb_post['link'] = $fb_link_post;
+        
+        if($fb_image_post!='')
+           $fb_post['picture'] = $fb_image_post;
+        
+        if($fb_name_post!='')
+           $fb_post['name'] = $fb_name_post;
+        
+        if($fb_description_post!='')
+           $fb_post['description'] = $fb_description_post;
+        
+         
         //Facebook Wall Update
-        try {
-            $publishStream = $facebook->api("/$facebook_uid/feed", 'post', array(
-                'message' => $params['message'],
-                'link'    => 'http://redsocial.ugto.mx',
-                'name'    => 'Buzzler',
-                'description'=> 'Si perteneces a la UGTO unete a nuestra red social de Buzzler'
-                )
-            );
+         try {
+            $publishStream = $facebook->api("/$facebook_uid/feed", 'post', $fb_post);
          } catch (FacebookApiException $e) {
             register_error('Error facebookservice'.$e);
          }
-      
-	return TRUE;
+         return TRUE;        
 }
