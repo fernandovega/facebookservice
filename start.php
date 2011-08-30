@@ -1,11 +1,10 @@
 <?php
-
 /**
  * Facebook Service
  *
  * @package facebookservice
  * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU Public License version 2
- * @author Fernando Vega fvega@ugto.mx
+ * @author Fernando Vega Cervantes fvega@ugto.mx
  * @copyright Universidad de Guanajuato, México
  * @link http://www.dti.ugto.mx
  */
