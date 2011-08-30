@@ -14,8 +14,7 @@ To enable:
 	5. Check the plugins you want to allow to Post.
 
 Note: Users MUST authorize their Facebook accounts AND select plugins that
-are allowed to post before Facebook will accept any posts.
-
+are allowed to share before Facebook will accept any posts.
 
 Developers:
 	You can register your plugin to provide Facebook integration.
